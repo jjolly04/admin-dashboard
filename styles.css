@@ -113,14 +113,12 @@ h6 {
 }
 
 :root {
-    --twitter-color: #008ad8;
+  --twitter-color: #008ad8;
 }
 
 body {
   height: 100vh;
   width: 100vw;
-
-
 
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -130,6 +128,8 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
+
+/* ------------------------------- SIDEBAR ---------------------------------- */
 
 .sidebar {
   background-color: var(--twitter-color);
@@ -143,44 +143,11 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  
+  gap: 90px;
 }
 
 .sidebar div {
   color: white;
-}
-
-.header {
-
-  grid-row: 1;
-  grid-column: 2;
-  padding: 30px 45px 10px 30px;
-  
-
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  display: flex;
-  flex-flow: column wrap;
-  gap: 0px;
-
-  justify-content: space-between;
-
-  box-shadow: 3px 1px 10px -3px;
-
-  z-index: 1;
-}
-
-.main {
-
-  grid-row: 2;
-  grid-column: 2;
-
-  background-color: rgb(238, 237, 237);
-  z-index: 0;
-
-  display: grid;
-
 }
 
 .dashboard-wrapper {
@@ -197,6 +164,26 @@ body {
   width: 50px;
 }
 
+/* ------------------------------- HEADER ---------------------------------- */
+
+.header {
+  grid-row: 1;
+  grid-column: 2;
+  padding: 30px 45px 10px 30px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0px;
+
+  justify-content: space-between;
+
+  box-shadow: 3px 1px 10px -5px;
+
+  z-index: 1;
+}
+
 .top-row {
   display: flex;
   height: 30px;
@@ -207,32 +194,28 @@ body {
 }
 
 .top-row div {
-    display: flex;
-    height: 60px;
-    width: inherit;
-  
-    justify-content: space-between;
-    gap: 20px;
-  
+  display: flex;
+  height: 60px;
+  width: inherit;
 
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .top-row img {
-    height: 30px;
-    width: 30px;
-    align-self: center;
-
-
+  height: 30px;
+  width: 30px;
+  align-self: center;
 }
 
-div div input {
+input {
   border-radius: 20px;
   border: none;
   background-color: lightgray;
   align-self: center;
 
-  
   width: 600px;
+  padding: 5px;
 }
 
 .top-row p {
@@ -240,47 +223,178 @@ div div input {
   font-size: 25px;
 }
 
-.bottom-row  {
-    display: flex;
-    height: 50px;
-    width: inherit;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.bottom-row {
+  display: flex;
+  height: 50px;
+  width: inherit;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .buttons {
-    display: flex;
-    height: 35px;
-    gap: 30px;
-   
+  display: flex;
+  height: 35px;
+  gap: 30px;
 }
 
 .buttons button {
-    background-color: var(--twitter-color);
-    border: none;
-    color: white;
-    width: 100px;
-    border-radius: 50px;
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  width: 100px;
+  border-radius: 50px;
 }
 
 .greeting {
-    display: flex;
-    flex-flow: row wrap;
-    height: 100px;
-    width: 300px;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100px;
+  width: 300px;
 
-    position: relative;
-    gap: 15px;
-    
+  position: relative;
+  gap: 15px;
 }
 
 .greeting :nth-child(1) {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .name {
-    position: absolute;
-    top: 19px;
-    left: 70px;
-    font-size: 25px;
+  position: absolute;
+  top: 19px;
+  left: 70px;
+  font-size: 25px;
+}
+
+/* ------------------------------- MAIN ---------------------------------- */
+
+.main {
+  grid-row: 2;
+  grid-column: 2;
+
+  background-color: #e2e8f0;
+  z-index: 0;
+  padding: 20px 25px 45px 15px;
+
+  display: grid;
+
+  grid-template-rows: 0.5fr 16fr;
+  grid-template-columns: 3fr 1fr;
+
+  gap: 10px;
+}
+
+.cards .card {
+  background-color: white;
+  color: black;
+  text-align: left;
+
+  padding: 20px;
+  box-shadow: 0px 0px 8px -5px;
+  border-radius: 5px;
+  border-left: solid 8px rgb(243, 208, 13);
+  height: 175px;
+  width: 390px;
+}
+
+.card p {
+  color: black;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgb(156, 154, 154);
+}
+
+.card .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.main > p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: -10px;
+  gap: 20px;
+}
+
+.announcements {
+  margin-top: -10px;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: stretch;
+}
+
+.trending > p {
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.announcements .card {
+  background-color: white;
+  color: black;
+  text-align: left;
+
+  width: 240px;
+  height: 87.5%;
+  padding: 20px;
+  box-shadow: 0px 0px 8px -5px;
+  border-radius: 5px;
+}
+
+.announcements  > .card > .content:first-child {
+    margin-top: -8px;
+}
+
+.announcements .content .title {
+  font-size: 15px;
+}
+
+.announcements .content:not(:last-child) {
+  font-size: 10px;
+  border-bottom: solid 0.3px lightgray;
+}
+
+.announcements .content p:not(.title) {
+  font-size: 10px;
+}
+
+.announcements .content {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+
+}
+
+.trending .card {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+}
+
+.friend > img {
+    height: 40px;
+    width: 40px;
+    grid-row: 1 / -1;
+}
+
+.friend {
+  display: grid;
+  grid-template-rows: 20px 20px;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+
+}
+
+#handle {
+  color: black;
 }
